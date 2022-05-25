@@ -23,6 +23,13 @@
                 <b>tel. {{ $post->user->infouser->phone }}</b>
                 <h4><span class="badge bg-primary">{{ $post->category->name }}</span></h4>
 
+                {{-- tags --}}
+                @if ($post->tags)
+                    @foreach ($post->tags as $tag)
+                        <span class="badge bg-secondary">{{ $tag->name }}</span>
+                    @endforeach
+                @endif
+
                 <p>{{ $post->content }}</p>
             </div>
         </div>
