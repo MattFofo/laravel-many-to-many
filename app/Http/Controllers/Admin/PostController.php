@@ -152,6 +152,7 @@ class PostController extends Controller
     {
         if (Auth::user()->id !== $post->user_id) abort(403);
 
+        $post->tags()->detach();
         $post->delete();
 
         return redirect(route('admin.home'))->with('status', "Post: $post->title deleted");

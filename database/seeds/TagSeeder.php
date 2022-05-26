@@ -13,7 +13,7 @@ class TagSeeder extends Seeder
      */
     public function run()
     {
-        $tags = ['javascript', 'pizza', 'laravel', 'ether', 'Bitcoin', 'estero', 'NFT', 'php', 'oop', 'javascript', 'Italia'];
+        $tags = ['javascript', 'pizza', 'laravel', 'ether', 'Bitcoin', 'estero', 'NFT', 'php', 'oop', 'viaggi', 'Italia'];
 
         foreach ($tags as $tag) {
             Tag::create([

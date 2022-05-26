@@ -20,8 +20,11 @@
                     <small>Data ultima modifica: {{ date('d/m/Y' , strtotime($post->updated_at)) }}</small>
                 @endif
 
-                <b>tel. {{ $post->user->infouser->phone }}</b>
-                <h4><span class="badge bg-primary">{{ $post->category->name }}</span></h4>
+                {{-- info user --}}
+                @if ($post->user->infouser && $post->user->infouser->phone)
+                    <b>tel. {{ $post->user->infouser->phone }}</b>
+                    <h4><span class="badge bg-primary">{{ $post->category->name }}</span></h4>
+                @endif
 
                 {{-- tags --}}
                 @if ($post->tags)
